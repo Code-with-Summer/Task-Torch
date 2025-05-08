@@ -1,2 +1,2 @@
 # Task-Torch
-A simple Task Management software
+A simple Task Management software.
