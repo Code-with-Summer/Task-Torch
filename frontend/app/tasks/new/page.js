@@ -53,72 +53,79 @@ export default function NewTask() {
     };
     return (
         <div className="max-w-md mx-auto bg-white shadow-md p-6 rounded-md mt-10 w-full">
-            <h2 className="text-2xl font-semibold mb-6 text-center">Create Task</h2>
+    <h2 className="text-2xl font-semibold mb-6 text-center">Create Task</h2>
 
-            <input
-                type="text"
-                placeholder="Title"
-                value={title}
-                onChange={e => setTitle(e.target.value)}
-                className="w-full border border-gray-300 px-4 py-2 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
-            />
+    <label className="block mb-1 font-medium">Title</label>
+    <input
+        type="text"
+        placeholder="Enter task title"
+        value={title}
+        onChange={e => setTitle(e.target.value)}
+        className="w-full border border-gray-300 px-4 py-2 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+    />
 
-            <textarea
-                placeholder="Description"
-                value={description}
-                onChange={e => setDescription(e.target.value)}
-                className="w-full border border-gray-300 px-4 py-2 rounded mb-4 resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
-            />
+    <label className="block mb-1 font-medium">Description</label>
+    <textarea
+        placeholder="Enter task description"
+        value={description}
+        onChange={e => setDescription(e.target.value)}
+        className="w-full border border-gray-300 px-4 py-2 rounded mb-4 resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
+    />
 
-            <input
-                type="date"
-                value={dueDate}
-                onChange={e => setDueDate(e.target.value)}
-                className="w-full border border-gray-300 px-4 py-2 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
-            />
+    <label className="block mb-1 font-medium">Due Date</label>
+    <input
+        type="date"
+        value={dueDate}
+        onChange={e => setDueDate(e.target.value)}
+        className="w-full border border-gray-300 px-4 py-2 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+    />
 
-            <select
-                value={priority}
-                onChange={e => setPriority(e.target.value)}
-                className="w-full border border-gray-300 px-4 py-2 rounded mb-4 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
-            >
-                <option value="Low">Low</option>
-                <option value="Medium">Medium</option>
-                <option value="High">High</option>
-            </select>
+    <label className="block mb-1 font-medium">Priority</label>
+    <select
+        value={priority}
+        onChange={e => setPriority(e.target.value)}
+        className="w-full border border-gray-300 px-4 py-2 rounded mb-4 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+    >
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+    </select>
 
-            <select
-                value={status}
-                onChange={e => setStatus(e.target.value)}
-                className="w-full border border-gray-300 px-4 py-2 rounded mb-4 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
-            >
-                <option value="Pending">Pending</option>
-                <option value="In Progress">In Progress</option>
-                <option value="Completed">Completed</option>
-            </select>
+    <label className="block mb-1 font-medium">Status</label>
+    <select
+        value={status}
+        onChange={e => setStatus(e.target.value)}
+        className="w-full border border-gray-300 px-4 py-2 rounded mb-4 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+    >
+        <option value="Pending">Pending</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+    </select>
 
-            <select
-                value={assignedTo}
-                onChange={e => setAssignedTo(e.target.value)}
-                className="w-full border border-gray-300 px-4 py-2 rounded mb-4 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
-            >
-                <option value="">Assign to (optional)</option>
-                {users.map(user => (
-                    <option key={user._id} value={user._id}>
-                        {user.name} ({user.email})
-                    </option>
-                ))}
-            </select>
+    <label className="block mb-1 font-medium">Assign To</label>
+    <select
+        value={assignedTo}
+        onChange={e => setAssignedTo(e.target.value)}
+        className="w-full border border-gray-300 px-4 py-2 rounded mb-4 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+    >
+        <option value="">Assign to (optional)</option>
+        {users.map(user => (
+            <option key={user._id} value={user._id}>
+                {user.name} ({user.email})
+            </option>
+        ))}
+    </select>
 
-            {error && <p className="text-red-600 text-sm mb-4">{error}</p>}
+    {error && <p className="text-red-600 text-sm mb-4">{error}</p>}
 
-            <button
-                onClick={handleSubmit}
-                className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-200"
-            >
-                Create
-            </button>
-        </div>
+    <button
+        onClick={handleSubmit}
+        className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-200"
+    >
+        Create
+    </button>
+</div>
+
 
     );
 }
