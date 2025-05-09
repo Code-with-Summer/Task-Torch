@@ -3,7 +3,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:5000/api',
+    baseURL: 'https://task-torch-1.onrender.com/api',
     withCredentials: true, // ✅ This sends cookies automatically
     headers: {
         'Content-Type': 'application/json'
